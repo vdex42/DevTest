@@ -20,6 +20,7 @@ namespace DeveloperTest.Business
             return context.Jobs.Select(x => new JobModel
             {
                 JobId = x.JobId,
+                CustomerId = x.CustomerId,
                 Engineer = x.Engineer,
                 When = x.When
             }).ToArray();
@@ -30,6 +31,7 @@ namespace DeveloperTest.Business
             return context.Jobs.Where(x => x.JobId == jobId).Select(x => new JobModel
             {
                 JobId = x.JobId,
+                CustomerId = x.CustomerId,
                 Engineer = x.Engineer,
                 When = x.When
             }).SingleOrDefault();
@@ -40,6 +42,7 @@ namespace DeveloperTest.Business
             var addedJob = context.Jobs.Add(new Job
             {
                 Engineer = model.Engineer,
+                CustomerId = model.CustomerId,
                 When = model.When
             });
 

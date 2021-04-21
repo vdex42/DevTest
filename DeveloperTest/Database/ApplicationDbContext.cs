@@ -33,6 +33,9 @@ namespace DeveloperTest.Database
                 .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Job>()
+                .HasOne(p => p.Customer);
+
+            modelBuilder.Entity<Job>()
                 .HasData(new Job
                 {
                     JobId = 1,

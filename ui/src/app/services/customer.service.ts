@@ -11,11 +11,11 @@ export class CustomerService {
   constructor(private httpClient : HttpClient) { }
 
   public GetCustomers(): Observable<CustomerModel[]> {
-    return this.httpClient.get<CustomerModel[]>('http://localhost:63235/customer');
+    return this.httpClient.get<CustomerModel[]>('http://localhost:63235/customer');    
   }
 
-  public GetCustomer(jobId: number): Observable<CustomerModel> {
-    return this.httpClient.get<CustomerModel>(`http://localhost:63235/customer/${jobId}`);
+  public GetCustomer(customerId: number): Observable<CustomerModel> {
+    return this.httpClient.get<CustomerModel>(`http://localhost:63235/customer/${customerId}`);
   }
 
   public CreateCustomer(customer: CustomerModel): Promise<object> {

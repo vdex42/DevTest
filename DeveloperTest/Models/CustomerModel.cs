@@ -1,11 +1,8 @@
 ﻿namespace DeveloperTest.Models
 {
-    public class CustomerModel
+    public class CustomerModel : BaseCustomerModel
     {
         public int CustomerId { get; set; }
 
-        public string Name { get; set; }
-
-        public string CustomerType { get; set; }
     }
 }
